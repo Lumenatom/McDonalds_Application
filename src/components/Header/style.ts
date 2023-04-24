@@ -5,16 +5,17 @@ type Props = {
     bannerImage: string
 }
 export const WrapperNavbar = styled.div`
-  //position: fixed;
-  //top: 0;
-  //left: 0;
-  //right: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   max-width: 1240px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
+  background: ${COLOR.white};
 
   svg {
     fill: ${COLOR.gray};
