@@ -7,6 +7,9 @@ import {McNuggets} from "../api/McNuggets";
 import {Sides} from "../api/Sides";
 import {Happy} from "../api/Happy";
 import {Coffees} from "../api/Coffees";
+import {Bakery} from "../api/Bakery";
+import {Sweets} from "../api/Sweets";
+import {Beverages} from "../api/Beverages";
 
 const useAllMenu = () => {
     const [allMenu, setAllMenu] = useState<Product[]>([])
@@ -21,6 +24,9 @@ const useAllMenu = () => {
         Sides.forEach((el) => all.push(el))
         Happy.forEach((el) => all.push(el))
         Coffees.forEach((el) => all.push(el))
+        Bakery.forEach((el) => all.push(el))
+        Sweets.forEach((el) => all.push(el))
+        Beverages.forEach((el) => all.push(el))
 
         setAllMenu(all)
     }, [])

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {ANIMATION, COLOR, DefaultText, DefaultTitle} from "../../assets/CONSTANTS";
+import {ANIMATION, COLOR, DefaultText, DefaultTitle, FONTS} from "../../assets/CONSTANTS";
 
 export const WrapperMenu = styled.div`
   display: flex;
@@ -7,14 +7,14 @@ export const WrapperMenu = styled.div`
   padding: 50px 0;
 `;
 export const MenuTitle = styled(DefaultTitle)`
-    margin: 0;
+  margin: 0;
 `;
 export const WrapperCategories = styled.div`
   display: flex;
   flex-wrap: wrap;
   row-gap: 0;
   column-gap: 35px;
-  margin:15px 0 50px;
+  margin: 15px 0 50px;
 `;
 export const MenuCategory = styled.div`
   display: flex;
@@ -26,12 +26,12 @@ export const MenuCategory = styled.div`
   // &:hover{
     //   scale: ${ANIMATION.scale};
   // }
-  &:active{
+  &:active {
     scale: ${ANIMATION.scaleClick};
-    
+
   }
-  
-  img{
+
+  img {
     max-width: 70px;
   }
 `;
@@ -44,30 +44,101 @@ export const CategoryName = styled(DefaultText)<{ selected: boolean }>`
 
 `;
 export const WrapperItems = styled.div`
+  width: 100%;
+  justify-content: center;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
 `;
 export const WrapperItem = styled.div`
-  width: 17%;
-  height: 240px;
+  width: 15%;
+  height: 290px;
   border-radius: 10px;
   background: ${COLOR.white};
-  padding: 10px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.2);
   text-align: center;
-
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  
   img {
-    max-width: 100px;
+    max-width: 130px;
   }
 
+`;
+
+export const DescriptionItem = styled(DefaultTitle)`
+  font-size: ${FONTS.size16};
+  font-weight: ${FONTS.weight400};
+`;
+export const OptionBlockItem = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+  
+  span{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+    svg{
+      cursor: pointer;
+      width: 25px;
+      height: 25px;
+
+      transition: ${ANIMATION.transition};
+
+      // &:hover{
+        //   scale: ${ANIMATION.scale};
+      // }
+      &:active {
+        scale: ${ANIMATION.scaleClick};
+
+      }
+    }
+    
+    p{
+      font-size: 16px;
+      font-weight: ${FONTS.weight400};
+      font-family: ${FONTS.rubik};
+      width: 10px;
+      color: ${COLOR.gray};
+      
+    }
+  }
+`;
+export const PriceBlock = styled.div`
   p {
-    padding: 0;
-    margin: 0;
+    font-family: ${FONTS.rubik};
+    font-weight: ${FONTS.weight500};
+    color: ${COLOR.red}
+  }
+`;
+export const Basket = styled.div`
+  padding: 5px 6px;
+  background: #f5f5f5;
+  border-radius: 50%;
+  cursor: pointer;
+
+  transition: ${ANIMATION.transition};
+
+  // &:hover{
+    //   scale: ${ANIMATION.scale};
+  // }
+  &:active {
+    scale: ${ANIMATION.scaleClick};
+
+  }
+
+  svg {
+    width: 25px;
+    height: 25px;
   }
 `;

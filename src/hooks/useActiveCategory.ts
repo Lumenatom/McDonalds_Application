@@ -7,6 +7,9 @@ import {McNuggets} from "../api/McNuggets";
 import {Sides} from "../api/Sides";
 import {Happy} from "../api/Happy";
 import {Coffees} from "../api/Coffees";
+import {Bakery} from "../api/Bakery";
+import {Sweets} from "../api/Sweets";
+import {Beverages} from "../api/Beverages";
 
 
 const useActiveCategory = () => {
@@ -40,13 +43,13 @@ const useActiveCategory = () => {
                 setActiveCategoryItems(Coffees)
                 break;
             case 'McCafé® Bakery':
-                setActiveCategoryItems(Happy)
+                setActiveCategoryItems(Bakery)
                 break;
             case 'Sweets & Treats':
-                setActiveCategoryItems(Happy)
+                setActiveCategoryItems(Sweets)
                 break;
             case 'Beverages':
-                setActiveCategoryItems(Happy)
+                setActiveCategoryItems(Beverages)
                 break;
             default :
                 break;

@@ -9,26 +9,31 @@ export const WrapperNavbar = styled.div`
   top: 0;
   left: 0;
   right: 0;
-  max-width: 1240px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px;
+  z-index: 2;
+
   background: ${COLOR.white};
 
   svg {
     fill: ${COLOR.gray};
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
     cursor: pointer;
     transition: ${ANIMATION.transition};
 
-    &:hover {
-      scale: ${ANIMATION.scale};
+    &:active {
+      scale: ${ANIMATION.scaleClick};
     }
   }
 `;
+
+export const NavbarContent = styled.div`
+  max-width: 1240px;
+
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;`;
 export const NavbarSearch = styled.div`
   display: flex;
   align-items: center;

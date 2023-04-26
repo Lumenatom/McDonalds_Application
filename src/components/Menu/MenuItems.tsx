@@ -3,10 +3,13 @@ import useActiveCategory from "../../hooks/useActiveCategory";
 import {CategoriesMenu} from "../../api/CategoriesMenu";
 import {CategoryName, MenuCategory, MenuTitle, WrapperCategories, WrapperItems, WrapperMenu} from "./style";
 import Item from "./Item";
-import {PropsSearch} from "../../types/types";
+import {Product, PropsSearch} from "../../types/types";
 import useAllMenu from "../../hooks/useAllMenu";
 
-const MenuItems: FC<PropsSearch> = ({value, visibleSearch, setVisibleSearch}) => {
+type Props = PropsSearch & {
+    setItemsBasket: (el: (prev: Product[]) => (Product | Product)[]) => void;
+}
+const MenuItems: FC<Props> = ({value, visibleSearch, setVisibleSearch, setItemsBasket}) => {
     const {
         visibleCategory,
         setVisibleCategory,
@@ -49,7 +52,7 @@ const MenuItems: FC<PropsSearch> = ({value, visibleSearch, setVisibleSearch}) =>
             <WrapperItems>
                 {
                     findProduct().map((el) => (
-                        <Item key={el.id} item={el}/>
+                        <Item key={el.id} item={el}  setItemsBasket={setItemsBasket}/>
                     ))
                 }
             </WrapperItems>
