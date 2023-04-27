@@ -103,7 +103,7 @@ export const ActiveBanner = styled.div<Props>`
   transition: ${ANIMATION.transition};
   
   @media screen and (max-width: 768px){
-    height: 300px;
+    height: 400px;
   }
   
 
