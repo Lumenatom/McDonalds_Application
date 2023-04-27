@@ -15,6 +15,16 @@ export const WrapperCategories = styled.div`
   row-gap: 0;
   column-gap: 35px;
   margin: 15px 0 50px;
+
+  @media screen and (max-width: 768px) {
+    column-gap: 20px;
+  }
+
+  @media screen and (max-width: 425px) {
+    gap: 0;
+    row-gap: 10px;
+    align-items: end;
+  }
 `;
 export const MenuCategory = styled.div`
   display: flex;
@@ -31,6 +41,10 @@ export const MenuCategory = styled.div`
 
   }
 
+  @media screen and (max-width: 425px) {
+    width: 45%;
+  }
+
   img {
     max-width: 70px;
   }
@@ -41,7 +55,11 @@ export const CategoryName = styled(DefaultText)<{ selected: boolean }>`
   color: ${({selected}) => selected ? COLOR.red : COLOR.gray};
   border-bottom: ${({selected}) => selected ? `1px solid ${COLOR.red}` : `1px solid ${COLOR.gray}`};
 
-
+  @media screen and (max-width: 425px) {
+    max-width: 50%;
+    text-align: center;
+    white-space: normal;
+  }
 `;
 export const WrapperItems = styled.div`
   width: 100%;
@@ -65,7 +83,15 @@ export const WrapperItem = styled.div`
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  
+
+  @media screen and (max-width: 768px) {
+    width: 25%
+  }
+
+  @media screen and (max-width: 425px) {
+    width: 100%
+  }
+
   img {
     max-width: 130px;
   }

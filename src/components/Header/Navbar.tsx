@@ -1,5 +1,5 @@
 import {FC, useState} from "react";
-import {WrapperNavbar, NavbarSearch, NavbarContent} from "./style";
+import {WrapperNavbar, NavbarSearch, NavbarContent, BasketBlock} from "./style";
 import Logo from "../../assets/logo.jpg"
 import {AiOutlineSearch, AiOutlineShopping} from "react-icons/all";
 import {AnimatePresence, motion} from "framer-motion"
@@ -34,7 +34,12 @@ const Navbar: FC<Props> = ({value, setValue, visibleSearch, setVisibleSearch, it
                         }
                     </AnimatePresence>
                 </NavbarSearch>
-                <AiOutlineShopping onClick={() => setVisibleBasket(!visibleBasket)}/>
+                <BasketBlock>
+                    <AiOutlineShopping onClick={() => setVisibleBasket(!visibleBasket)}/>
+                    {
+                        itemsBasket.length > 0 &&  <span>{itemsBasket.length}</span>
+                    }
+                </BasketBlock>
             </NavbarContent>
             <AnimatePresence>
                 {visibleBasket && <ModalBasket itemsBasket={itemsBasket} setItemsBasket={setItemsBasket}/>}

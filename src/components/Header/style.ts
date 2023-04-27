@@ -26,6 +26,27 @@ export const WrapperNavbar = styled.div`
   }
 `;
 
+export const BasketBlock = styled.div`
+  position: relative;
+  
+  span {
+    font-family: ${FONTS.rubik};
+    background: ${COLOR.red};
+    font-size: ${FONTS.size14};
+    font-weight: ${FONTS.weight300};
+    color: ${COLOR.white};
+    border-radius: 50%;
+    width: 22px;
+    height:22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -30%;
+    right: -30%;
+  }
+`;
+
 export const NavbarContent = styled.div`
   max-width: 1240px;
 
@@ -53,9 +74,15 @@ export const NavbarSearch = styled.div`
     font-size: ${FONTS.size16};
     color: ${COLOR.gray};
     font-weight: ${FONTS.weight400};
+    border-radius: 0;
     
     &:focus{
       outline: none;
+    }
+    
+    @media screen and (max-width: 425px){
+      width: 150px;
+
     }
   }
 `;
@@ -74,6 +101,11 @@ export const ActiveBanner = styled.div<Props>`
   align-items: flex-end;
   justify-content: center;
   transition: ${ANIMATION.transition};
+  
+  @media screen and (max-width: 768px){
+    height: 300px;
+  }
+  
 
 
   svg {

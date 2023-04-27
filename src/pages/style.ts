@@ -7,6 +7,6 @@ export const Container = styled.div`
 `;
 
 export const WrapperHomePage = styled.div`
-  //padding-top:70px;
+  padding-top:70px;
 
 `;
