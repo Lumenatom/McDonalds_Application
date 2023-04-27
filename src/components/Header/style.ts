@@ -80,7 +80,7 @@ export const NavbarSearch = styled.div`
       outline: none;
     }
     
-    @media screen and (max-width: 425px){
+    @media screen and (max-width: 525px){
       width: 150px;
 
     }

@@ -20,7 +20,7 @@ export const WrapperCategories = styled.div`
     column-gap: 20px;
   }
 
-  @media screen and (max-width: 425px) {
+  @media screen and (max-width: 525px) {
     gap: 0;
     row-gap: 10px;
     align-items: end;
@@ -41,7 +41,7 @@ export const MenuCategory = styled.div`
 
   }
 
-  @media screen and (max-width: 425px) {
+  @media screen and (max-width: 525px) {
     width: 45%;
   }
 
@@ -55,7 +55,7 @@ export const CategoryName = styled(DefaultText)<{ selected: boolean }>`
   color: ${({selected}) => selected ? COLOR.red : COLOR.gray};
   border-bottom: ${({selected}) => selected ? `1px solid ${COLOR.red}` : `1px solid ${COLOR.gray}`};
 
-  @media screen and (max-width: 425px) {
+  @media screen and (max-width: 525px) {
     max-width: 50%;
     text-align: center;
     white-space: normal;
@@ -88,7 +88,7 @@ export const WrapperItem = styled.div`
     width: 25%
   }
 
-  @media screen and (max-width: 425px) {
+  @media screen and (max-width: 525px) {
     width: 100%
   }
 
