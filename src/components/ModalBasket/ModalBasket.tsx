@@ -29,7 +29,7 @@ const ModalBasket: FC<Props> = ({itemsBasket, setItemsBasket, setVisibleBasket})
         itemsBasket.forEach((el) => {
             total += ((el.countItem || 1) * (el.currentPrice || 0));
         })
-        return total
+        return Number(total.toFixed(1))
     }
 
     return (
