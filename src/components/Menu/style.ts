@@ -107,7 +107,6 @@ export const OptionBlockItem = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  align-items: center;
   
   span{
     display: flex;

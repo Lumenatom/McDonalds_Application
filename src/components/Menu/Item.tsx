@@ -2,13 +2,15 @@ import {FC, useState} from "react";
 import {Product} from "../../types/types";
 import {Basket, DescriptionItem, OptionBlockItem, PriceBlock, WrapperItem} from "./style";
 import {IoBagAddOutline, CiCirclePlus, CiCircleMinus} from "react-icons/all";
+import useNotifications from "../../hooks/useNotifications.ts";
 
 type Props = {
     item: Product
     setItemsBasket: (el: (prev: Product[]) => (Product | Product)[]) => void;
 }
 const Item: FC<Props> = ({item, setItemsBasket}) => {
-    const {name, image} = item;
+    const{handleNotifications}=useNotifications()
+    const {name, image, currentPrice} = item;
     const [count, setCount] = useState(1)
     const handleCountItem = (e: string) => {
         if (e === 'plus') {
@@ -20,6 +22,8 @@ const Item: FC<Props> = ({item, setItemsBasket}) => {
         }
     }
 
+
+
     return (
         <WrapperItem>
             <img src={image} alt={name}/>
@@ -28,7 +32,7 @@ const Item: FC<Props> = ({item, setItemsBasket}) => {
             </DescriptionItem>
             <PriceBlock>
                 {/*<span>last</span>*/}
-                <p>$5.50</p>
+                <p>${currentPrice}</p>
             </PriceBlock>
             <OptionBlockItem>
                 <span>
@@ -37,7 +41,13 @@ const Item: FC<Props> = ({item, setItemsBasket}) => {
                     <CiCirclePlus onClick={() => handleCountItem('plus')}/>
                 </span>
                 <Basket>
-                    <IoBagAddOutline onClick={() => setItemsBasket((prev: Product[]) => [...prev, item])}/>
+                    <IoBagAddOutline onClick={() => {
+                        setItemsBasket((prev: Product[]) => [...prev, {
+                            ...item,
+                            countItem: count
+                        }])
+                        handleNotifications('Added to cart');
+                    }}/>
                 </Basket>
             </OptionBlockItem>
 

@@ -11,7 +11,7 @@ export const WrapperNavbar = styled.div`
   right: 0;
   z-index: 2;
 
-  background: ${COLOR.white};
+  background: ${COLOR.lightGray};
 
   svg {
     fill: ${COLOR.gray};

@@ -6,10 +6,13 @@ import Navbar from "./components/Header/Navbar";
 import {Product} from "./types/types";
 
 
+export type ProductToBasket = Product & {
+    countItem?: number;
+}
 const App: FC = () => {
     const [value, setValue] = useState('')
     const [visibleSearch, setVisibleSearch] = useState(false)
-    const [itemsBasket, setItemsBasket] = useState<Product[]>([])
+    const [itemsBasket, setItemsBasket] = useState<ProductToBasket[]>([])
 
 
     return (

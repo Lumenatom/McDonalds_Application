@@ -1,9 +1,8 @@
-import {FC, useState} from "react";
-import {WrapperNavbar, NavbarSearch, NavbarContent, BasketBlock} from "./style";
-import Logo from "../../assets/logo.jpg"
-import {AiOutlineSearch, AiOutlineShopping} from "react-icons/all";
-import {AnimatePresence, motion} from "framer-motion"
-import {Product, PropsSearch} from "../../types/types";
+import { FC, useState } from "react";
+import { WrapperNavbar, NavbarSearch, NavbarContent, BasketBlock } from "./style";
+import { AiOutlineSearch, AiOutlineShopping, AiOutlineClose } from "react-icons/all";
+import { AnimatePresence, motion } from "framer-motion"
+import { Product, PropsSearch } from "../../types/types";
 import ModalBasket from "../ModalBasket/ModalBasket";
 
 type Props = PropsSearch & {
@@ -18,7 +17,9 @@ const Navbar: FC<Props> = ({value, setValue, visibleSearch, setVisibleSearch, it
         <WrapperNavbar>
             <NavbarContent>
                 <NavbarSearch>
-                    <img src={Logo} alt="McDonald's"/>
+                    <img
+                        src='https://www.freepnglogos.com/uploads/mcdonalds-png-logo/mcdonalds-png-original-logo-hd-0.png'
+                        alt="McDonald's"/>
                     <AiOutlineSearch onClick={() => {
                         setVisibleSearch ? setVisibleSearch(!visibleSearch) : visibleSearch;
                         setValue ? setValue('') : '';
@@ -34,15 +35,22 @@ const Navbar: FC<Props> = ({value, setValue, visibleSearch, setVisibleSearch, it
                         }
                     </AnimatePresence>
                 </NavbarSearch>
+
                 <BasketBlock>
-                    <AiOutlineShopping onClick={() => setVisibleBasket(!visibleBasket)}/>
                     {
-                        itemsBasket.length > 0 &&  <span>{itemsBasket.length}</span>
+                        visibleBasket ? <AiOutlineClose onClick={() => setVisibleBasket(!visibleBasket)}/>
+                            : (
+                                <><AiOutlineShopping onClick={() => setVisibleBasket(!visibleBasket)}/>
+                                    {
+                                        itemsBasket.length > 0 && <span>{itemsBasket.length}</span>
+                                    }</>)
                     }
+
                 </BasketBlock>
             </NavbarContent>
             <AnimatePresence>
-                {visibleBasket && <ModalBasket itemsBasket={itemsBasket} setItemsBasket={setItemsBasket}/>}
+                {visibleBasket && <ModalBasket setVisibleBasket={setVisibleBasket} itemsBasket={itemsBasket}
+                                               setItemsBasket={setItemsBasket}/>}
             </AnimatePresence>
         </WrapperNavbar>
     )

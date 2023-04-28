@@ -3,9 +3,10 @@ import styled from "styled-components";
 export const COLOR = {
     white: '#ffffff',
     gray: '#333333',
-    lightGray: '#9E9E9E',
+    lightGray: '#F6F6F6',
     red: '#F03536',
     yellow: '#FFCC00',
+    green: '#32CD32',
 }
 
 export const ANIMATION = {
